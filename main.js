@@ -20,6 +20,9 @@ $(document).ready(function () {
 			var song = data.response;
 
 			for (i = 0; i < song.length; i++) {
+
+				var songGen = song[i].genre;
+
 				var content = {
 					posterImg: song[i].poster,
 					textTile: song[i].title,
@@ -32,13 +35,24 @@ $(document).ready(function () {
 				containerCD.append(set);
 			};
 
+			var button = $('.btn');
+			var select = $('#genere');
+
+			button.click(function () {
+				
+				var attualSelected = select.children('option:selected').val();
+				var music = $('.cd');
+				music.hide();
+
+				if (songGen == attualSelected) {
+					music.show();
+				};
+			});
 		},
 		error: function () {
 			console.log("Errore nel caricamento dell'API");
 
 		}
 	});
-
-
 
 });
