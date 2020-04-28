@@ -5,40 +5,40 @@
 // In base a cosa scegliamo nella select vedremo i corrispondenti cd.
 
 
-$(document).ready(function() {
+$(document).ready(function () {
 	var containerCD = $('.cds-container');
 	var musicApi = 'https://flynn.boolean.careers/exercises/api/array/music';
 
 	var source = $("#music-template").html();
 	var template = Handlebars.compile(source);
 
-		$.ajax({
-			url: musicApi,
-			method: "GET",
-			success: function (data) {
+	$.ajax({
+		url: musicApi,
+		method: "GET",
+		success: function (data) {
 
-				var song = data.response;
-			
-				for (i=0; i< song.length; i++){
-					var content = {
-						posterImg:song[i].poster,
-						textTile:song[i].title,
-						textName:song[i].author,
-						textDate:song[i].year,
-					};						
-										
-					var set = template(content);
-							
-					containerCD.append(set);	
-				}
-				
-			},
-			error: function (){
-				console.log("Errore nel caricamento dell'API");
-				
-			}
-		});
+			var song = data.response;
 
-	
-	
+			for (i = 0; i < song.length; i++) {
+				var content = {
+					posterImg: song[i].poster,
+					textTile: song[i].title,
+					textName: song[i].author,
+					textDate: song[i].year,
+				};
+
+				var set = template(content);
+
+				containerCD.append(set);
+			};
+
+		},
+		error: function () {
+			console.log("Errore nel caricamento dell'API");
+
+		}
+	});
+
+
+
 });

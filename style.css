@@ -24,9 +24,33 @@ header {
     height: 70px;
     background: rgb(46, 58, 70);
 }
+
 header img {
     height: 50px;
     margin-top: 10px;
+}
+
+#genere {
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #1E2D3B;
+    padding-bottom: 5px;
+    background-color: rgb(46, 58, 70);
+    color: grey;
+    font-size: 20px;
+}
+
+#genere option {
+    background-color: white;
+    color: gray;
+    width: 310px;
+    padding: 10px 15px;
+    height: 20px;
+    cursor: pointer;
+}
+
+#genere option:hover {
+    color: rgb(46, 58, 70);
 }
 
 
