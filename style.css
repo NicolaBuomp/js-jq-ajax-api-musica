@@ -11,6 +11,9 @@ body {
 }
 
 .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 1070px;
     height: 100%;
     margin: 0 auto;
@@ -25,6 +28,8 @@ header img {
     height: 50px;
     margin-top: 10px;
 }
+
+
 
 .cds-container {
     display: flex;
@@ -63,7 +68,6 @@ header img {
     font-size: 20px;
 }
 
-.cd span.year,
-.cd span.genre {
+.cd span.year {
     color: grey;
 }

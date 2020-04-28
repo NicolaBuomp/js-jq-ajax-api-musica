@@ -24,7 +24,6 @@ $(document).ready(function() {
 						posterImg:song[i].poster,
 						textTile:song[i].title,
 						textName:song[i].author,
-						textGenre:song[i].genre,
 						textDate:song[i].year,
 					};						
 										
