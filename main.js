@@ -21,13 +21,12 @@ $(document).ready(function () {
 
 			for (i = 0; i < song.length; i++) {
 
-				var songGen = song[i].genre;
-
 				var content = {
 					posterImg: song[i].poster,
 					textTile: song[i].title,
 					textName: song[i].author,
 					textDate: song[i].year,
+					classGenre: song[i].genre.toLowerCase(),
 				};
 
 				var set = template(content);
@@ -35,19 +34,22 @@ $(document).ready(function () {
 				containerCD.append(set);
 			};
 
-			var button = $('.btn');
 			var select = $('#genere');
 
-			button.click(function () {
-				
-				var attualSelected = select.children('option:selected').val();
-				var music = $('.cd');
-				music.hide();
+			select.change(function () {
 
-				if (songGen == attualSelected) {
-					music.show();
-				};
+				var genre = $(this).val();
+
+				if (genre === 'all') {
+					$('.cd').show();
+
+				} else {
+					$('.cd').hide();
+					$('.cd.' + genre).show();
+				}
+
 			});
+
 		},
 		error: function () {
 			console.log("Errore nel caricamento dell'API");
